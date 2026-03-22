@@ -1,5 +1,5 @@
 import { LunarCalendar } from "@dqcai/vn-lunar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const CAN: string[] = [
   "Giáp",
@@ -98,6 +98,27 @@ export default function App() {
   const yearCanChi = getYearCanChi(lunarYear);
 
   const [numSaid, setNumSaid] = useState<number>(1);
+  const [selectedChapter, setSelectedChapter] = useState<string>("Phẩm 1");
+  const [savedData, setSavedData] = useState<{ chapter: string; time: string } | null>(null);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+
+  // Load saved data from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("niem_phat_save");
+    if (saved) {
+      setSavedData(JSON.parse(saved));
+    }
+  }, []);
+
+  const handleSave = () => {
+    const data = {
+      chapter: selectedChapter,
+      time: new Date().toLocaleString("vi-VN"),
+    };
+    localStorage.setItem("niem_phat_save", JSON.stringify(data));
+    setSavedData(data);
+    setIsEditing(false);
+  };
 
   const handleNumSaid = (): void => {
     setNumSaid(numSaid === 1 ? 2 : 1);
@@ -154,7 +175,6 @@ Nam mô A Di Đà Phật. (3 lần)
 
         {numSaid === 2 && (
           <>
-            <input placeholder="chapter" style={{ width: '96%', maxWidth: 700, margin: "0 auto", height: 40 }} />
             <p style={{ whiteSpace: "pre-line" }}>
               {`Kính lạy:
             Nam mô Bổn Sư Thích Ca Mâu Ni Phật. (3 lần)
@@ -188,6 +208,68 @@ Nam mô Cầu Sám Hối Bồ Tát Ma Ha Tát. (3 lần)
 Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát. (3 lần)
 Nam mô A Di Đà Phật. (3 lần)`}
             </p>
+
+            <div style={{ width: '96%', maxWidth: 700, margin: "20px auto", display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              {savedData && !isEditing ? (
+                <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', padding: '15px', borderRadius: '10px', textAlign: 'center' }}>
+                  <p style={{ margin: 0, fontWeight: 'bold' }}>Đã lưu: {savedData.chapter}</p>
+                  <p style={{ margin: '5px 0 0 0', fontSize: '16px', opacity: 0.8 }}>Thời gian: {savedData.time}</p>
+                  <button
+                    onClick={() => setIsEditing(true)}
+                    style={{
+                      marginTop: '10px',
+                      padding: '5px 15px',
+                      backgroundColor: 'transparent',
+                      border: '1px solid #fff',
+                      color: '#fff',
+                      borderRadius: '5px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Thay đổi
+                  </button>
+                </div>
+              ) : (
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <select
+                    value={selectedChapter}
+                    onChange={(e) => setSelectedChapter(e.target.value)}
+                    style={{
+                      flex: 1,
+                      height: 45,
+                      borderRadius: '10px',
+                      border: 'none',
+                      padding: '0 10px',
+                      fontSize: '18px',
+                      backgroundColor: '#fff',
+                      color: '#000'
+                    }}
+                  >
+                    {Array.from({ length: 13 }, (_, i) => (
+                      <option key={i + 1} value={`Phẩm ${i + 1}`}>
+                        Phẩm {i + 1}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    onClick={handleSave}
+                    style={{
+                      padding: '0 20px',
+                      height: 45,
+                      borderRadius: '10px',
+                      border: 'none',
+                      backgroundColor: '#ff9800',
+                      color: '#fff',
+                      fontSize: '18px',
+                      fontWeight: 'bold',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Lưu
+                  </button>
+                </div>
+              )}
+            </div>
           </>
         )}
 
@@ -211,3 +293,4 @@ Nam mô A Di Đà Phật. (3 lần)`}
     </div>
   );
 }
+
