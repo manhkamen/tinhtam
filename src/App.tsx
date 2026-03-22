@@ -111,9 +111,11 @@ export default function App() {
         backgroundColor: "#563060",
         color: "#fff",
         fontSize: 20,
+        width: '100vw',
         lineHeight: 1.6,
       }}
     >
+
       <div style={{ maxWidth: 700, margin: "0 auto" }}>
         {numSaid === 1 && (
           <p style={{ whiteSpace: "pre-line" }}>
@@ -134,7 +136,7 @@ tức Ngày ${dayCanChi}
 Tháng ${monthCanChi}
 Năm ${yearCanChi}.
 
-Đệ tử con chí thành phát nguyện,
+Đệ tử con nhất tâm chí thành phát nguyện,
 một lòng quy hướng Tam Bảo,
 phát tâm trì tụng kinh điển,
 tu học theo lời Phật dạy.
@@ -151,28 +153,42 @@ Nam mô A Di Đà Phật. (3 lần)
         )}
 
         {numSaid === 2 && (
-          <p style={{ whiteSpace: "pre-line" }}>
-            {`Nam mô Bổn Sư Thích Ca Mâu Ni Phật. (3 lần)
+          <>
+            <input placeholder="chapter" style={{ width: '96%', maxWidth: 700, margin: "0 auto", height: 40 }} />
+            <p style={{ whiteSpace: "pre-line" }}>
+              {`Kính lạy:
+            Nam mô Bổn Sư Thích Ca Mâu Ni Phật. (3 lần)
 
 Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát. (3 lần)
+Nam mô Đại Bi Quan Thế Âm Bồ Tát.
+Nam mô Dược Sư Lưu Ly Quang Vương Phật.
+Nam mô Cầu Sám Hối Bồ Tát Ma Ha Tát. (3 lần)
 
 Hôm nay ngày ${lunarDay} tháng ${lunarMonth} năm ${lunarYear}
 tức Ngày ${dayCanChi}
 Tháng ${monthCanChi}
 Năm ${yearCanChi}.
 
-Đệ tử con chí thành phát nguyện
-trì tụng 1 biến Chú Đại Bi và 1 phẩm Kinh Địa Tạng Bồ Tát Bổn Nguyện.
+Đệ tử con tên là: Nguyễn Công Mạnh
+(Pháp danh: Chúc Lực)
+cư ngụ tại số nhà 15, đường Tế Hanh, phường Hòa Xuân, quận Cẩm Lệ, tp Đà Nẵng
+
+Đệ tử con nhất tâm chí thành phát nguyện
+trì tụng Chú Đại Bi và một phẩm Kinh Địa Tạng Bồ Tát Bổn Nguyện Bồ Tát Bổn Nguyện.
 
 Nguyện trên đền bốn ơn sâu,
 dưới cứu khổ tam  đồ,
 cầu cho pháp giới chúng sanh
 đồng thành Phật đạo.
 
+Nam mô Đại Bi Quan Thế Âm Bồ Tát.
+Nam mô Dược Sư Lưu Ly Quang Vương Phật.
+Nam mô Cầu Sám Hối Bồ Tát Ma Ha Tát. (3 lần)
+
 Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát. (3 lần)
-Nam mô A Di Đà Phật. (3 lần)
-`}
-          </p>
+Nam mô A Di Đà Phật. (3 lần)`}
+            </p>
+          </>
         )}
 
         <button
