@@ -1,7 +1,7 @@
 import { LunarCalendar } from "@dqcai/vn-lunar";
 import { useState } from "react";
 
-const CAN = [
+const CAN: string[] = [
   "Giáp",
   "Ất",
   "Bính",
@@ -13,7 +13,8 @@ const CAN = [
   "Nhâm",
   "Quý",
 ];
-const CHI = [
+
+const CHI: string[] = [
   "Tý",
   "Sửu",
   "Dần",
@@ -28,7 +29,7 @@ const CHI = [
   "Hợi",
 ];
 
-const CHI_MONTH = [
+const CHI_MONTH: string[] = [
   "Dần",
   "Mão",
   "Thìn",
@@ -43,7 +44,8 @@ const CHI_MONTH = [
   "Sửu",
 ];
 
-function jdFromDate(dd, mm, yy) {
+// ===== Julian Day Number =====
+function jdFromDate(dd: number, mm: number, yy: number): number {
   const a = Math.floor((14 - mm) / 12);
   const y = yy + 4800 - a;
   const m = mm + 12 * a - 3;
@@ -59,7 +61,8 @@ function jdFromDate(dd, mm, yy) {
   );
 }
 
-function getTodayDayCanChi() {
+// ===== Can Chi NGÀY =====
+function getTodayDayCanChi(): string {
   const now = new Date();
   const jd = jdFromDate(now.getDate(), now.getMonth() + 1, now.getFullYear());
 
@@ -69,16 +72,18 @@ function getTodayDayCanChi() {
   return `${can} ${chi}`;
 }
 
-function getYearCanChi(year) {
-  return `${CAN[(year + 6) % 10]} ${CHI[(year + 8) % 12]}`;
+// ===== Can Chi THÁNG =====
+function getMonthCanChi(lunarYear: number, lunarMonth: number): string {
+  const yearCanIndex = (lunarYear + 6) % 10;
+  const firstMonthCanIndex = (yearCanIndex * 2 + 2) % 10;
+  const monthCanIndex = (firstMonthCanIndex + lunarMonth - 1) % 10;
+
+  return `${CAN[monthCanIndex]} ${CHI_MONTH[lunarMonth - 1]}`;
 }
 
-function getMonthCanChi(year, month) {
-  const yearCanIndex = (year + 6) % 10;
-  const firstMonthCanIndex = (yearCanIndex * 2 + 2) % 10;
-  const monthCanIndex = (firstMonthCanIndex + month - 1) % 10;
-
-  return `${CAN[monthCanIndex]} ${CHI_MONTH[month - 1]}`;
+// ===== Can Chi NĂM =====
+function getYearCanChi(lunarYear: number): string {
+  return `${CAN[(lunarYear + 6) % 10]} ${CHI[(lunarYear + 8) % 12]}`;
 }
 
 export default function App() {
@@ -92,9 +97,9 @@ export default function App() {
   const monthCanChi = getMonthCanChi(lunarYear, lunarMonth);
   const yearCanChi = getYearCanChi(lunarYear);
 
-  const [numSaid, setNumSaid] = useState(1);
+  const [numSaid, setNumSaid] = useState<number>(1);
 
-  const handleNumSaid = () => {
+  const handleNumSaid = (): void => {
     setNumSaid(numSaid === 1 ? 2 : 1);
   };
 
@@ -103,7 +108,7 @@ export default function App() {
       style={{
         padding: 20,
         minHeight: "100vh",
-        background: "#563060",
+        backgroundColor: "#563060",
         color: "#fff",
         fontSize: 20,
         lineHeight: 1.6,
@@ -121,22 +126,27 @@ Nam mô Cầu Sám Hối Bồ Tát Ma Ha Tát. (3 lần)
 
 Đệ tử con tên là: Nguyễn Công Mạnh
 (Pháp danh: Chúc Lực)
+cư ngụ tại số nhà 15, đường Tế Hanh, phường Hòa Xuân, quận Cẩm Lệ, tp Đà Nẵng
+
 
 Hôm nay ngày ${lunarDay} tháng ${lunarMonth} năm ${lunarYear}
-tức Ngày ${dayCanChi} Tháng ${monthCanChi} Năm ${yearCanChi}.
+tức Ngày ${dayCanChi}
+Tháng ${monthCanChi}
+Năm ${yearCanChi}.
 
 Đệ tử con chí thành phát nguyện,
 một lòng quy hướng Tam Bảo,
 phát tâm trì tụng kinh điển,
 tu học theo lời Phật dạy.
 
-Ngưỡng nguyện mười phương chư Phật,
+Ngưỡng nguyện mười phương chư Phật, chư phật mười phương
 chư Đại Bồ Tát,
 chư Hiền Thánh Tăng,
 Long Thần Hộ Pháp từ bi gia hộ.
 
 Nam mô Bổn Sư Thích Ca Mâu Ni Phật.
-Nam mô A Di Đà Phật. (3 lần)`}
+Nam mô A Di Đà Phật. (3 lần)
+`}
           </p>
         )}
 
@@ -147,18 +157,21 @@ Nam mô A Di Đà Phật. (3 lần)`}
 Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát. (3 lần)
 
 Hôm nay ngày ${lunarDay} tháng ${lunarMonth} năm ${lunarYear}
-tức Ngày ${dayCanChi} Tháng ${monthCanChi} Năm ${yearCanChi}.
+tức Ngày ${dayCanChi}
+Tháng ${monthCanChi}
+Năm ${yearCanChi}.
 
 Đệ tử con chí thành phát nguyện
-trì tụng Chú Đại Bi và Kinh Địa Tạng.
+trì tụng 1 biến Chú Đại Bi và 1 phẩm Kinh Địa Tạng Bồ Tát Bổn Nguyện.
 
-Nguyện trên đền bốn trọng ân,
-dưới cứu khổ ba đường,
-cầu cho pháp giới chúng sinh
+Nguyện trên đền bốn ơn sâu,
+dưới cứu khổ tam  đồ,
+cầu cho pháp giới chúng sanh
 đồng thành Phật đạo.
 
 Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát. (3 lần)
-Nam mô A Di Đà Phật. (3 lần)`}
+Nam mô A Di Đà Phật. (3 lần)
+`}
           </p>
         )}
 
@@ -170,7 +183,7 @@ Nam mô A Di Đà Phật. (3 lần)`}
             width: "100%",
             borderRadius: 20,
             border: "none",
-            background: "green",
+            backgroundColor: "green",
             color: "#fff",
             fontSize: 20,
             cursor: "pointer",
