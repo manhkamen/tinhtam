@@ -183,12 +183,10 @@ export default function App() {
               Nam mô Dược Sư Lưu Ly Quang Vương Phật.
               Nam mô Cầu Sám Hối Bồ Tát Ma Ha Tát. (3 lần)
 
-              Đệ tử con tên là: ${userName}
-              (Pháp danh: ${phapdanh})
-              cư ngụ tại số ${address}
-
-
-              Hôm nay ngày ${lunarDay} tháng ${lunarMonth} năm ${lunarYear}
+              Đệ tử con tên là: ${userName}` +
+              `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
+              `cư ngụ tại số ${address}
+               Hôm nay ngày ${lunarDay} tháng ${lunarMonth} năm ${lunarYear}
               tức Ngày ${dayCanChi}
               Tháng ${monthCanChi}
               Năm ${yearCanChi}.
@@ -226,8 +224,8 @@ export default function App() {
             Năm ${yearCanChi}.
 
             Đệ tử con tên là: ${userName}` +
-            `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
-            `cư ngụ tại số ${address}
+                `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
+                `cư ngụ tại số ${address}
 
             Đệ tử con nhất tâm chí thành phát nguyện
             trì tụng Chú Đại Bi và một phẩm Kinh Địa Tạng Bồ Tát Bổn Nguyện Bồ Tát Bổn Nguyện.
