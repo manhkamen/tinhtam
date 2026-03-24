@@ -226,9 +226,8 @@ export default function App() {
             Năm ${yearCanChi}.
 
             Đệ tử con tên là: ${userName}` +
-                            `${phapdanh && `(Pháp danh: ${phapdanh})`}` +
-                            `
-            cư ngụ tại số ${address}
+            `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
+            `cư ngụ tại số ${address}
 
             Đệ tử con nhất tâm chí thành phát nguyện
             trì tụng Chú Đại Bi và một phẩm Kinh Địa Tạng Bồ Tát Bổn Nguyện Bồ Tát Bổn Nguyện.
