@@ -176,34 +176,31 @@ export default function App() {
       <div style={{ maxWidth: 700, margin: "0 auto" }}>
         {numSaid === 1 && (
           <p style={{ whiteSpace: "pre-line" }}>
-            {`Nam mô Bổn Sư Thích Ca Mâu Ni Phật. (3 lần)
-
-              Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát.
-              Nam mô Đại Bi Quan Thế Âm Bồ Tát.
-              Nam mô Dược Sư Lưu Ly Quang Vương Phật.
-              Nam mô Cầu Sám Hối Bồ Tát Ma Ha Tát. (3 lần)
-
+            {` Nam Mô A Di Đà Phật (3 lần)
+              Hôm nay là ngày ${lunarDay}  tháng ${lunarMonth} năm ${lunarYear} +
               Đệ tử con tên là: ${userName}` +
               `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
               `cư ngụ tại số ${address}
-               Hôm nay ngày ${lunarDay} tháng ${lunarMonth} năm ${lunarYear}
-              tức Ngày ${dayCanChi}
-              Tháng ${monthCanChi}
-              Năm ${yearCanChi}.
-
-              Đệ tử con nhất tâm chí thành phát nguyện,
-              một lòng quy hướng Tam Bảo,
-              phát tâm trì tụng kinh điển,
-              tu học theo lời Phật dạy.
-
-              Ngưỡng nguyện mười phương chư Phật, chư phật mười phương
-              chư Đại Bồ Tát,
-              chư Hiền Thánh Tăng,
-              Long Thần Hộ Pháp từ bi gia hộ.
-
-              Nam mô Bổn Sư Thích Ca Mâu Ni Phật.
-              Nam mô A Di Đà Phật. (3 lần)
-              `}
+              Con xin thay mặt cho toàn thể gia đình, họ hàng, bạn bè, người thân, đồng nghiệp, 
+              và tất cả những ai có duyên lành với con, nhất tâm chí thành phát nguyện đến
+               trước bàn thờ gian tiên dâng ném tâm hương dốc lòng kính lạy:
+               - Đức Phật Thích Ca Mâu Ni
+                - Đức Phật A Di Đà
+                - Đương Lai Hạ Sinh Di Lặc Tôn Phật
+                - Đông Phương Giáo Chú Dược Sư Lưu Ly  Phật
+                - 10 Phương Chư Phật, Vô Thượng Phật pháp
+                - Thiên Thủ Thiên Nhãn Đại Từ  Đại Bi Cứu Khô Cứu Nạn Linh Cảm Quan Thế Âm Bồ Tát
+                - Chư Đại Bồ Tát, Chư Hiền Thánh Tăng, Chư Long Thần Hộ Pháp
+                - Thiên Long Bát Bộ Hộ Pháp Tôn Thần, Chư Thiên, Chư Tiên, Chư Đại Thần Linh hành khiển  thái tuế, chí đức tôn thần.
+                - Con xin kính lạy Thổ Công Chúa Đất, Thổn Thần Long Mạch cùng các Quan trong điền địa tại gia.
+                - Con xin kính mời Gia tiên tiền tổ, Tổ cô, Tổ mãnh, Thất Tổ Cửu Huyền dòng họ... và họ... hai bên nội ngoại
+                - con xin kính mời các Chúng sinh khắp hư không pháp giới, các chúng sinh có mặt hiện hữu tại nơi đây và các chúng sinh 
+                ở các tầng không gian khác về đây tu tập, tụng Kinh ... niệm phật,
+                
+                Đệ tử con từ lâu đời lâu kiếp, nghiệp chướng nặng nề,si mê lầm lạc, ngày nay con thành tâm xin Sám nguyện làm điều lành, 
+                tránh điều dữ, xin chư Phật gia hộ cho các Chúng sinh và gia tiên 2 họ của con, các vong linh thai nhi đều được vãng sanh cõi  Cực Lạc
+                xin cho con và mọi người trong gia đình đều tinh tấn tu hành, tinh sâu Phật Pháp, nhân quả, luân hồi cùng ăn chay niệm Phật, đồng hành cùng nhau trên bước đường
+                tu tập và làm thiện nguyện, đến khi lâm chung được vãng sinh về Tây Phương Cực Lạc... `}
           </p>
         )}
 
