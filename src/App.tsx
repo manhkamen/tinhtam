@@ -178,6 +178,9 @@ export default function App() {
           <p style={{ whiteSpace: "pre-line" }}>
             {` Nam Mô A Di Đà Phật (3 lần)
               Hôm nay là ngày ${lunarDay}  tháng ${lunarMonth} năm ${lunarYear} +
+               tức Ngày ${dayCanChi}
+            Tháng ${monthCanChi}
+            Năm ${yearCanChi}.
               Đệ tử con tên là: ${userName}` +
               `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
               `cư ngụ tại số ${address}
