@@ -177,16 +177,16 @@ export default function App() {
         {numSaid === 1 && (
           <p style={{ whiteSpace: "pre-line" }}>
             {` Nam Mô A Di Đà Phật (3 lần)
-              Hôm nay là ngày ${lunarDay}  tháng ${lunarMonth} năm ${lunarYear} +
+              Hôm nay là ngày ${lunarDay}  tháng ${lunarMonth} năm ${lunarYear}
                tức Ngày ${dayCanChi}
             Tháng ${monthCanChi}
             Năm ${yearCanChi}.
               Đệ tử con tên là: ${userName}` +
               `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
-              `cư ngụ tại số ${address}
+              ` cư ngụ tại ${address}
               Con xin thay mặt cho toàn thể gia đình, họ hàng, bạn bè, người thân, đồng nghiệp, 
               và tất cả những ai có duyên lành với con, nhất tâm chí thành phát nguyện đến
-               trước bàn thờ gian tiên dâng ném tâm hương dốc lòng kính lạy:
+               trước bàn thờ gia tiên dâng ném tâm hương dốc lòng kính lạy:
                - Đức Phật Thích Ca Mâu Ni
                 - Đức Phật A Di Đà
                 - Đương Lai Hạ Sinh Di Lặc Tôn Phật
