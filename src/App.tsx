@@ -225,19 +225,25 @@ export default function App() {
 
             Đệ tử con tên là: ${userName}` +
                 `${phapdanh && `\n(Pháp danh: ${phapdanh})`}` +
-                `cư ngụ tại số ${address}
+                ` Hiện cư ngụ tại số nhà ${address}
 
             Đệ tử con nhất tâm chí thành phát nguyện
-            trì tụng Chú Đại Bi và một phẩm Kinh Địa Tạng Bồ Tát Bổn Nguyện Bồ Tát Bổn Nguyện.
+            trì tụng Chú Đại Bi và một phẩm
+            Kinh Địa Tạng Bồ Tát Bổn Nguyện,
+            nguyện nương oai lực Tam Bảo,
+            khiến thân tâm thanh tịnh,
+            tiêu trừ nghiệp chướng,
+            tăng trưởng tín tâm,
+            khai mở trí huệ.
 
             Nguyện trên đền bốn ơn sâu,
             dưới cứu khổ tam  đồ,
             cầu cho pháp giới chúng sanh
             đồng thành Phật đạo.
-
-            Nam mô Đại Bi Quan Thế Âm Bồ Tát.
-            Nam mô Dược Sư Lưu Ly Quang Vương Phật.
+  
             Nam mô Cầu Sám Hối Bồ Tát Ma Ha Tát. (3 lần)
+            Nam mô Dược Sư Lưu Ly Quang Vương Phật.
+            Nam mô Đại Bi Quan Thế Âm Bồ Tát.
 
             Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát. (3 lần)
             Nam mô A Di Đà Phật. (3 lần)`}
